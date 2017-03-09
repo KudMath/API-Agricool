@@ -19,9 +19,13 @@ Les utilisateurs Admin peuvent ajouter et supprimer des containers, et les utili
 #Exemples curl:
 
 GET (voir tous): curl http://localhost:9001/api/v1/containers -H 'Content-Type: application/json' -H "X-AUTH-TOKEN: pauline:encodedpassword" -w "\n" 
+
 GET (voir les details un container par son id): curl http://localhost:9001/api/v1/containers/1 -H 'Content-Type: application/json' -H "X-AUTH-TOKEN: pauline:encodedpassword" -w "\n" 
+
 POST (ajouter un container): curl -X POST http://localhost:9001/api/v1/containers -d '{"name":"Whatever", "plant":"Carrot", "temperature":"0","humidity":"0", "timeOfPlantation":"1", "lat":"0","lng":"0"}' -H 'Content-Type: application/json' -H "X-AUTH-TOKEN: admin:encodedpassword" -w "\n" 
+
 PUT (updater le container #1): curl -X PUT http://localhost:9001/api/v1/containers/1 -d '{"temperature":"35", "humidity":"60"}' -H 'Content-Type: application/json' -H "X-AUTH-TOKEN: container:encodedpassword"  -w "\n" 
+
 DELETE: curl -X DELETE http://localhost:9001/ap'i/v1/containers/1 -H 'Content-Type: application/json' -H "X-AUTH-TOKEN: admin:encodedpassword" -w "\n"
 
 #Limitations:
